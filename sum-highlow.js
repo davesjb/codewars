@@ -1,6 +1,8 @@
+// Sum without highest and lowest number
+
 function sumArray(array) {
   
-    console.log(array)
+    console.log("array", array)
     
     if(array == null || array.length < 3){
       return 0;
@@ -9,25 +11,20 @@ function sumArray(array) {
   //   const low = Math.min(...array);
   //   const high = Math.max(...array); 
     
-    let sortArray = array.toSorted();
+    const sortArray = array.sort((a, b)=> a - b);
     
-    let slicedArray = sortArray.slice(start,end)
+    console.log("sortArray", sortArray)
+    
+    let slicedArray = sortArray.slice(1, array.length - 1)
     
     let sum = 0;
     
+    console.log("slicedArray", slicedArray)
     
-    console.log(high)
-    
-    array.sort((val)=>{
-      
-    }
-      
-    array.forEach((val)=>{
-      
-       if(val !== low && val !== high)  {
+    slicedArray.forEach((val)=> {
+      console.log(val)
         sum += val;
         
-      } 
     })
     
     return sum;
